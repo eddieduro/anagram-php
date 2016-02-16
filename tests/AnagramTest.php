@@ -13,20 +13,32 @@
             $result = $new_anagram->AnagramCheck($input);
 
             // Assert
-            $this->assertEquals(array("hey"), $result);
+            $this->assertEquals("ehy hey", $result);
         }
 
-        function test_multiWord()
+        function test__LetterArr()
         {
             // Arrange
             $new_anagram = new Anagram;
-            $input = "how are you";
+            $input = "you";
 
             // Act
             $result = $new_anagram->AnagramCheck($input);
 
             // Assert
-            $this->assertEquals(array("how", "are", "you"), $result);
+            $this->assertEquals("ouy you", $result);
+        }
+        function test_SortingLetters()
+        {
+            // Arrange
+            $new_anagram = new Anagram;
+            $input = "cat";
+
+            // Act
+            $result = $new_anagram->AnagramCheck($input);
+
+            // Assert
+            $this->assertEquals("act cat", $result);
         }
     }
 ?>
