@@ -13,7 +13,7 @@
             $result = $new_anagram->AnagramCheck($input);
 
             // Assert
-            $this->assertEquals("ehy hey", $result);
+            $this->assertEquals("hey ehy yhe", $result);
         }
 
         function test__LetterArr()
@@ -26,7 +26,7 @@
             $result = $new_anagram->AnagramCheck($input);
 
             // Assert
-            $this->assertEquals("ouy you", $result);
+            $this->assertEquals("you ouy yuo", $result);
         }
         function test_SortingLetters()
         {
@@ -38,7 +38,22 @@
             $result = $new_anagram->AnagramCheck($input);
 
             // Assert
-            $this->assertEquals("act cat", $result);
+            $this->assertEquals("cat act tca", $result);
         }
+
+        function test_ComparingLetters()
+        {
+            // Arrange
+            $new_anagram = new Anagram;
+            $input = "tac";
+
+            // Act
+            $result = $new_anagram->AnagramCheck($input);
+
+            // Assert
+            $this->assertEquals("tac act tca", $result);
+        }
+
+
     }
 ?>
