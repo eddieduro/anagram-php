@@ -13,7 +13,20 @@
             $result = $new_anagram->AnagramCheck($input);
 
             // Assert
-            $this->assertEquals("hey", $result);
+            $this->assertEquals(array("hey"), $result);
+        }
+
+        function test_multiWord()
+        {
+            // Arrange
+            $new_anagram = new Anagram;
+            $input = "how are you";
+
+            // Act
+            $result = $new_anagram->AnagramCheck($input);
+
+            // Assert
+            $this->assertEquals(array("how", "are", "you"), $result);
         }
     }
 ?>

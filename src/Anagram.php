@@ -4,7 +4,8 @@
         function AnagramCheck($input)
         {
             $lower_string = strtolower($input);
-            return $lower_string;
+            $word_array = explode(" ", $lower_string);
+            return $word_array;
         }
     }
 ?>
